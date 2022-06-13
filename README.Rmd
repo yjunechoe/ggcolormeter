@@ -5,9 +5,13 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
+ragg_png = function(..., res = 150) {
+  ragg::agg_png(..., res = res, units = "in")
+}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
+  dev = "ragg_png",
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
@@ -27,6 +31,8 @@ knitr::opts_chunk$set(
 ```{r simple-usage}
 library(ggplot2)
 library(ggcolormeter)
+
+theme_set(theme_classic())
 
 p <- ggplot(mtcars, aes(drat, hp)) +
   geom_point(aes(color = mpg))
@@ -281,7 +287,6 @@ p +
       dashboard_color = NA
     )
   ) +
-  theme_classic() +
   theme(legend.position = c(.85, .75))
 ```
 

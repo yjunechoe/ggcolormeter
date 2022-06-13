@@ -19,6 +19,8 @@ guide extension in the style of a dashboard meter.
 library(ggplot2)
 library(ggcolormeter)
 
+theme_set(theme_classic())
+
 p <- ggplot(mtcars, aes(drat, hp)) +
   geom_point(aes(color = mpg))
 
@@ -359,7 +361,6 @@ p +
       dashboard_color = NA
     )
   ) +
-  theme_classic() +
   theme(legend.position = c(.85, .75))
 ```
 

@@ -2,9 +2,15 @@ Package: ggcolormeter
 Type: Package
 Title: Colormeter guide extension
 Version: 0.1.0
-Author: June Choe
-Maintainer: June Choe <jchoe001@gmail.com>
+Authors@R: c(
+      person(given = "June",
+           family = "Choe",
+           role = c("aut", "cre"),
+           email = "yjchoe@sas.upenn.edu",
+           comment = c(ORCID = "0000-0002-0701-921X")))
 Description: Implements a ggplot2 color/fill guide extension in the style of a dashboard meter.
+URL: https://github.com/yjunechoe/ggcolormeter, https://github.com/yjunechoe/ggcolormeter/issues
+BugReports: https://github.com/yjunechoe/ggcolormeter/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -15,3 +21,5 @@ Imports:
     grid,
     gtable,
     polyclip
+    
+    

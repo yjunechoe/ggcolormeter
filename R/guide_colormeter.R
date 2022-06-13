@@ -17,7 +17,7 @@ NULL
 #' @inheritParams ggplot2::guide_colorsteps
 #' @param legend_size Size of the legend box.
 #' @param legend_padding Spacing between the color meter and the legend boundary.
-#' @param title_pos <[`legend-coords`][legend-coords]> 2-length vector for the x/y-position of the legend title.
+#' @param title_position <[`legend-coords`][legend-coords]> 2-length vector for the x/y-position of the legend title.
 #' @param arc_range <[`legend-coords`][legend-coords]> 2-length vector for the start and end angles of the color meter.
 #' @param arc_radius <[`legend-coords`][legend-coords]> Radius of the color meter.
 #' @param arc_width <[`legend-coords`][legend-coords]> Width of the arcs in the color meter.
@@ -42,10 +42,10 @@ NULL
 #'
 guide_colormeter <- function(title = ggplot2::waiver(), title.theme = NULL, label.theme = NULL,
                              legend_size = unit(5, "lines"), legend_padding = unit(c(1.2, 1, 0.3, 1), "lines"),
-                             title_pos = c(0, 0), arc_range = c(-4/7 * pi, 4/7 * pi),
+                             title_position = c(0, 0), arc_range = c(-4/7 * pi, 4/7 * pi),
                              arc_radius = 1, arc_width = arc_radius/4, arc_gap = arc_radius/5, arc_rounding = 0,
                              label_radius = arc_radius * 1.25, dashboard_radius = label_radius * 1.2,
-                             dashboard_color = "black", dashboard_fill = "white",
+                             dashboard_color = "black", dashboard_fill = NA,
                              dashboard_linewidth = 0.5, dashboard_linetype = 1,
                              clip_dashboard = TRUE, close_dashboard = clip_dashboard,
                              frame_color = NA, frame_linewidth = 0.5, frame_linetype = 1,
@@ -60,7 +60,7 @@ guide_colormeter <- function(title = ggplot2::waiver(), title.theme = NULL, labe
   )
   guide$legend_size <- legend_size
   guide$legend_padding <- legend_padding
-  guide$title_pos <- title_pos
+  guide$title_position <- title_position
   guide$arc_range <- arc_range
   guide$arc_radius <- arc_radius
   guide$arc_width <- arc_width
@@ -198,8 +198,8 @@ guide_gengrob.colormeter <- function(guide, theme) {
                                       margin_x = TRUE, margin_y = TRUE)
   title_grob$name <- "guide.title"
   title_grob$vp <- legend_vp
-  title_grob$children[[1]]$x <- grid::unit(guide$title_pos[1], "native")
-  title_grob$children[[1]]$y <- grid::unit(guide$title_pos[2], "native")
+  title_grob$children[[1]]$x <- grid::unit(guide$title_position[1], "native")
+  title_grob$children[[1]]$y <- grid::unit(guide$title_position[2], "native")
 
 
   legend_padding <- rep_len(guide$legend_padding, 4)
@@ -241,9 +241,9 @@ guide_gengrob.colormeter <- function(guide, theme) {
                                   clip = "off", t = 1, r = 3, b = 3, l = 1)
   }
 
-  if (guide$debug) {
+    if (guide$debug) {
     gt <- gtable::gtable_filter(gt, "background", invert = TRUE)
-    gt$grobs[[length(gt$grobs)]]$gp <- grid::gpar(lty = 5, fill = NA, col = "turquoise")
+    gt$grobs[[which(gt$layout$name == "outline")]]$gp <- grid::gpar(lty = 5, fill = NA, col = "turquoise")
     xaxis <- grid::xaxisGrob(vp = legend_vp)
     yaxis <- grid::yaxisGrob(vp = legend_vp)
     origin <- grid::pointsGrob(0, 0, default.units = "native", vp = legend_vp)

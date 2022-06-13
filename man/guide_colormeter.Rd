@@ -2,7 +2,7 @@
 % Please edit documentation in R/guide_colormeter.R
 \name{guide_colormeter}
 \alias{guide_colormeter}
-\title{Dashboard meter legend or color and fill}
+\title{A color legend in the style of a dashboard meter}
 \usage{
 guide_colormeter(
   title = ggplot2::waiver(),
@@ -10,7 +10,7 @@ guide_colormeter(
   label.theme = NULL,
   legend_size = unit(5, "lines"),
   legend_padding = unit(c(1.2, 1, 0.3, 1), "lines"),
-  title_pos = c(0, 0),
+  title_position = c(0, 0),
   arc_range = c(-4/7 * pi, 4/7 * pi),
   arc_radius = 1,
   arc_width = arc_radius/4,
@@ -19,7 +19,7 @@ guide_colormeter(
   label_radius = arc_radius * 1.25,
   dashboard_radius = label_radius * 1.2,
   dashboard_color = "black",
-  dashboard_fill = "white",
+  dashboard_fill = NA,
   dashboard_linewidth = 0.5,
   dashboard_linetype = 1,
   clip_dashboard = TRUE,
@@ -53,7 +53,7 @@ specified by \code{legend.text} in \code{\link[ggplot2:theme]{theme()}}.}
 
 \item{legend_padding}{Spacing between the color meter and the legend boundary.}
 
-\item{title_pos}{<\code{\link{legend-coords}}> 2-length vector for the x/y-position of the legend title.}
+\item{title_position}{<\code{\link{legend-coords}}> 2-length vector for the x/y-position of the legend title.}
 
 \item{arc_range}{<\code{\link{legend-coords}}> 2-length vector for the start and end angles of the color meter.}
 
@@ -103,5 +103,5 @@ for which a colourbar can be drawn.}
 \item{...}{Ignored.}
 }
 \description{
-Dashboard meter legend or color and fill
+A color legend in the style of a dashboard meter
 }

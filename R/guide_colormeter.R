@@ -235,7 +235,7 @@ guide_gengrob.colormeter <- function(guide, theme) {
       width = grid::convertUnit(sum(gt$widths), "cm"),
       height = grid::convertUnit(sum(gt$heights), "cm"),
       gp = dashboard_border_gp,
-      vp = grid::editViewport(legend_vp, mask = dashboard_grob)
+      vp = grid::editViewport(legend_vp, mask = grid::editGrob(dashboard_grob, gp = grid::gpar(fill = "white")))
     )
     gt <- gtable::gtable_add_grob(gt, dashboard_border, name = "dashboard_close",
                                   clip = "off", t = 1, r = 3, b = 3, l = 1)

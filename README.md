@@ -173,7 +173,7 @@ p +
     guide = guide_colormeter(
       arc_range = c(-pi/2, 0),
       title_position = c(-.2, .2), # moves title left and up from center
-      legend_padding = grid::unit(.5, "lines") # pads relative to legend label
+      legend_padding = grid::unit(1.5, "lines") # pads relative to legend label
     )
   )
 ```

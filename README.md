@@ -1,3 +1,8 @@
+> **Warning**
+>
+> This extension will not work in the next major update to ggplot when [guides are converted to `ggproto`](https://github.com/tidyverse/ggplot2/pull/4879).
+>
+> There are no plans for additional maintanence until I can get {ggcolormeter} ported over to the new system.
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 

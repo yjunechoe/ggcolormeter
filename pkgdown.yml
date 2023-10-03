@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-10-03T13:32Z
+last_built: 2023-10-03T13:41Z
 urls:
   reference: https://yjunechoe.github.io/ggcolormeter/reference
   article: https://yjunechoe.github.io/ggcolormeter/articles

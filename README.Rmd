@@ -48,11 +48,11 @@ p +
 
 The colormeter guide has argument families for styling 5 distinct components of the guide:
 
-1) Size and aspect
-2) Arc
-3) Label
-4) Dashboard
-5) Frame
+1) [Size and aspect](https://github.com/yjunechoe/ggcolormeter#1-size-and-aspect)
+2) [Arc](https://github.com/yjunechoe/ggcolormeter#2-arc)
+3) [Label](https://github.com/yjunechoe/ggcolormeter#3-label)
+4) [Dashboard](https://github.com/yjunechoe/ggcolormeter#4-dashboard)
+5) [Frame](https://github.com/yjunechoe/ggcolormeter#5-frame)
 
 Position of these theme elements is relative to the [guide-internal coordinate system](https://yjunechoe.github.io/ggcolormeter/reference/legend-coords.html), which you can inspect with the `debug = TRUE` argument.
 

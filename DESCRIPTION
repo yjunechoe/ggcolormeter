@@ -3,7 +3,7 @@ Package: ggcolormeter
 Title: Colormeter Guide Extension
 Version: 0.2.0
 Authors@R: 
-    person("June", "Choe", , "yjchoe@sas.upenn.edu", role = c("aut", "cre"),
+    person("June", "Choe", , "jchoe001@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-0701-921X"))
 Description: A 'ggplot2' guide extension for fill and color scales in the
     style of a dashboard meter.

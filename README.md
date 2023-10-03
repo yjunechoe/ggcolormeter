@@ -11,8 +11,10 @@
 coverage](https://codecov.io/gh/yjunechoe/ggcolormeter/branch/main/graph/badge.svg)](https://app.codecov.io/gh/yjunechoe/ggcolormeter?branch=main)
 <!-- badges: end -->
 
-`{ggcolormeter}` adds `guide_colormeter()`, a `{ggplot2}` color/fill
-legend guide extension in the style of a dashboard meter.
+The `{ggcolormeter}` package provides a single function
+[`guide_colormeter()`](https://yjunechoe.github.io/ggcolormeter/reference/guide_colormeter.html),
+which is a `{ggplot2}` color/fill legend **guide extension** in the
+style of a dashboard meter.
 
 ## Simple usage
 
@@ -35,7 +37,23 @@ p +
 
 <img src="man/figures/README-simple-usage-1.png" width="100%" />
 
-# Legend boundary
+# Colormeter guide theme components
+
+The colormeter guide has argument families for styling 5 distinct
+components of the guide:
+
+1)  Size and aspect
+2)  Arc
+3)  Label
+4)  Dashboard
+5)  Frame
+
+Position of these theme elements is relative to the [guide-internal
+coordinate
+system](https://yjunechoe.github.io/ggcolormeter/reference/legend-coords.html),
+which you can inspect with the `debug = TRUE` argument.
+
+## 1) Size and aspect
 
 The colormeter legend is a bit pecular in that its size doesn’t expand
 with more keys: the colormeter has a fixed size and shape, and its
@@ -95,7 +113,7 @@ p +
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
-## Arc
+## 2) Arc
 
 ``` r
 formals(guide_colormeter)[grepl("arc", names(formals(guide_colormeter)))]
@@ -181,7 +199,7 @@ p +
 
 <img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
-## Label
+## 3) Label
 
 ``` r
 formals(guide_colormeter)[grepl("label", names(formals(guide_colormeter)))]
@@ -224,7 +242,7 @@ p +
 
 <img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
 
-## Dashboard
+## 4) Dashboard
 
 ``` r
 formals(guide_colormeter)[grepl("dashboard", names(formals(guide_colormeter)))]
@@ -302,7 +320,7 @@ p +
 
 <img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
 
-## Frame
+## 5) Frame
 
 ``` r
 formals(guide_colormeter)[grepl("frame", names(formals(guide_colormeter)))]
@@ -332,7 +350,7 @@ p +
 
 <img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
 
-## Misc
+## Miscellaneous
 
 Set `debug = TRUE` to inspect the internal legend coordinate system (for
 deciding on `dashboard_radius`, `arc_width`, `title_position`, etc.):

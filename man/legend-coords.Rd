@@ -11,4 +11,17 @@ mini isolated coordinate space. You can inspect this coordinate space with \code
 The coordinate space defaults to the x-y range of the legend "data", which considers the
 polar-transformed positioning of the color arcs/bars, the labels, and the dashboard circle.
 }
+\examples{
+library(ggplot2)
+# A standard plot
+p <- ggplot(mtcars, aes(drat, hp)) +
+  geom_point(aes(color = mpg))
+# Colormeter guide for color scale
+p +
+  scale_color_viridis_c(
+    option = "inferno",
+    breaks = scales::breaks_pretty(10),
+    guide = guide_colormeter(debug = TRUE)
+  )
+}
 \keyword{internal}

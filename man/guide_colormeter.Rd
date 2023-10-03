@@ -89,8 +89,11 @@ specified by \code{legend.text} in \code{\link[ggplot2:theme]{theme()}}.}
 
 \item{aspect.ratio}{Aspect ratio for the legend.}
 
-\item{show.limits}{Should labels for the outer limits of the bins be printed?
-Default is \code{NULL} which makes the guide use the setting from the scale}
+\item{show.limits}{Logical. Should the limits of the scale be shown with
+labels and ticks. Default is \code{NULL} meaning it will take the value from the
+scale. This argument is ignored if \code{labels} is given as a vector of
+values. If one or both of the limits is also given in \code{breaks} it will be
+shown irrespective of the value of \code{show.limits}.}
 
 \item{debug}{If \code{TRUE}, axes and origin for <\code{\link{legend-coords}}> are drawn over the legend for debugging.}
 
@@ -102,6 +105,23 @@ for which a colourbar can be drawn.}
 
 \item{...}{Ignored.}
 }
+\value{
+A guide object of class 'colormeter'
+}
 \description{
 A color legend in the style of a dashboard meter
+}
+\examples{
+library(ggplot2)
+# A standard plot
+p <- ggplot(mtcars, aes(drat, hp)) +
+  geom_point(aes(color = mpg))
+# Colormeter guide for color scale
+p +
+  scale_color_viridis_c(
+    option = "inferno",
+    breaks = scales::breaks_pretty(10),
+    guide = guide_colormeter()
+  )
+
 }

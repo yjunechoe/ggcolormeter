@@ -9,6 +9,19 @@
 #'
 #' @keywords internal
 #' @name legend-coords
+#'
+#' @examples
+#' library(ggplot2)
+#' # A standard plot
+#' p <- ggplot(mtcars, aes(drat, hp)) +
+#'   geom_point(aes(color = mpg))
+#' # Colormeter guide for color scale
+#' p +
+#'   scale_color_viridis_c(
+#'     option = "inferno",
+#'     breaks = scales::breaks_pretty(10),
+#'     guide = guide_colormeter(debug = TRUE)
+#'   )
 NULL
 
 #' A color legend in the style of a dashboard meter
@@ -38,8 +51,21 @@ NULL
 #' @param debug If `TRUE`, axes and origin for <[`legend-coords`][legend-coords]> are drawn over the legend for debugging.
 #' @param ... Ignored.
 #'
-#' @export
+#' @examples
+#' library(ggplot2)
+#' # A standard plot
+#' p <- ggplot(mtcars, aes(drat, hp)) +
+#'   geom_point(aes(color = mpg))
+#' # Colormeter guide for color scale
+#' p +
+#'   scale_color_viridis_c(
+#'     option = "inferno",
+#'     breaks = scales::breaks_pretty(10),
+#'     guide = guide_colormeter()
+#'   )
 #'
+#' @export
+#' @return A guide object of class 'colormeter'
 guide_colormeter <- function(title = ggplot2::waiver(), title.theme = NULL, label.theme = NULL,
                              legend_size = unit(5, "lines"), legend_padding = unit(c(1.2, 1, 0.3, 1), "lines"),
                              title_position = c(0, 0), arc_range = c(-4/7 * pi, 4/7 * pi),
@@ -81,6 +107,7 @@ guide_colormeter <- function(title = ggplot2::waiver(), title.theme = NULL, labe
 }
 
 #' @importFrom ggplot2 guide_gengrob
+#' @noRd
 #' @export
 #' @method guide_gengrob colormeter
 guide_gengrob.colormeter <- function(guide, theme) {

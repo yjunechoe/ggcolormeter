@@ -1,3 +1,6 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # ggcolormeter
 
 <!-- badges: start -->
@@ -5,6 +8,9 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
+[![R-CMD-check](https://github.com/yjunechoe/ggcolormeter/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yjunechoe/ggcolormeter/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/yjunechoe/ggcolormeter/branch/main/graph/badge.svg)](https://app.codecov.io/gh/yjunechoe/ggcolormeter?branch=main)
 <!-- badges: end -->
 
 *ggcolormeter* adds `guide_colormeter()`, a {ggplot2} color/fill legend
@@ -365,6 +371,6 @@ p +
 
 ## Acknowledgments
 
--   Thomas Lin Pedersen for
-    [`{ggforce}`](https://github.com/thomasp85/ggforce), whose several
-    unexported functions are used in this package.
+- Thomas Lin Pedersen for
+  [`{ggforce}`](https://github.com/thomasp85/ggforce), whose several
+  unexported functions are used in this package.

@@ -30,7 +30,7 @@ jobs:
         run: |
           covr::codecov(
             type = c("tests", "vignettes", "examples"),
-            exclusions = list("R/unexported-ggforce.R"),
+            exclusions = "R/unexported-ggforce.R",
             quiet = FALSE,
             clean = FALSE,
             install_path = file.path(Sys.getenv("RUNNER_TEMP"), "package")

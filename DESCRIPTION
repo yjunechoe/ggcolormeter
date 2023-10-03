@@ -8,8 +8,7 @@ Authors@R:
 Description: A 'ggplot2' guide extension for fill and color scales in the
     style of a dashboard meter.
 License: MIT + file LICENSE
-URL: https://github.com/yjunechoe/ggcolormeter,
-    https://github.com/yjunechoe/ggcolormeter/issues
+URL: https://github.com/yjunechoe/ggcolormeter, https://github.com/yjunechoe/ggcolormeter/issues, https://yjunechoe.github.io/ggcolormeter/
 BugReports: https://github.com/yjunechoe/ggcolormeter/issues
 Depends:
     ggplot2,

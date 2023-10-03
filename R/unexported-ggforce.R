@@ -1,3 +1,4 @@
+# nocov start
 `%||%` <- function(lhs, rhs) {
   if (!is.null(lhs)) lhs else rhs
 }
@@ -198,3 +199,4 @@ arcPaths <- function(data, n) {
   }
   paths[, !names(paths) %in% c('x0', 'y0', 'exploded')]
 }
+# nocov end

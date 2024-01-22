@@ -16,6 +16,14 @@ The `{ggcolormeter}` package provides a single function
 which is a `{ggplot2}` color/fill legend **guide extension** in the
 style of a dashboard meter.
 
+## Installation
+
+``` r
+install.packages("ggcolormeter")
+# or
+remotes::install_github("yjunechoe/ggcolormeter")
+```
+
 ## Simple usage
 
 ``` r
@@ -75,7 +83,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 Note that the usual legend background is still present and different
 from the dashboard circle:
@@ -93,7 +101,7 @@ p +
   theme(legend.background = element_rect(color = "red", fill = "pink"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 Most of the time you’d want to remove this legend background, as the
 dashboard serves that purpose:
@@ -112,7 +120,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ## 2) Arc
 
@@ -180,7 +188,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 The defaults aren’t great for when you change from the dashboard shape.
 Some manual adjustments may be desirable:
@@ -198,7 +206,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
 ## 3) Label
 
@@ -224,7 +232,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
 
 Like `ggplot2::guide_colorsteps()`, the argument `show.limits` controls
 labeling the limits of the scale:
@@ -241,7 +249,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
 
 ## 4) Dashboard
 
@@ -282,7 +290,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-12-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
 
 By default, the dashboard is clipped to the legend boundary, which can
 be turned off:
@@ -301,7 +309,7 @@ p +
   theme(legend.title = ggtext::element_markdown(vjust = -.6))
 ```
 
-<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
 
 Non-positional aesthetic arguments for the dashboard:
 
@@ -319,7 +327,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
 
 ## 5) Frame
 
@@ -349,7 +357,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-17-1.png" width="100%" />
 
 ## Miscellaneous
 
@@ -365,7 +373,7 @@ p +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-17-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-18-1.png" width="100%" />
 
 Puttings labels inside the arc:
 
@@ -384,7 +392,7 @@ p +
   theme(legend.position = c(.85, .75))
 ```
 
-<img src="man/figures/README-unnamed-chunk-18-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-19-1.png" width="100%" />
 
 ## Acknowledgments
 

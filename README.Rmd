@@ -25,6 +25,15 @@ knitr::opts_chunk$set(
 
 The `{ggcolormeter}` package provides a single function [`guide_colormeter()`](https://yjunechoe.github.io/ggcolormeter/reference/guide_colormeter.html), which is a `{ggplot2}` color/fill legend **guide extension** in the style of a dashboard meter.
 
+## Installation
+
+```{r, eval=FALSE}
+install.packages("ggcolormeter")
+# or
+remotes::install_github("yjunechoe/ggcolormeter")
+```
+
+
 ## Simple usage
 
 ```{r simple-usage}

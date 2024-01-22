@@ -18,6 +18,7 @@ Imports:
     gtable,
     polyclip
 Suggests:
+    ggtext
     scales
 Encoding: UTF-8
 LazyData: true

@@ -9,8 +9,8 @@
     style of a dashboard meter.">
 <title>Colormeter Guide Extension • ggcolormeter</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Colormeter Guide Extension">
 <meta property="og:description" content="A ggplot2 guide extension for fill and color scales in the
@@ -40,6 +40,9 @@
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">Changelog</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -66,9 +69,17 @@
 
 <p>The <a href="https://github.com/yjunechoe/ggcolormeter" class="external-link">ggcolormeter</a> package provides a single function <a href="https://yjunechoe.github.io/ggcolormeter/reference/guide_colormeter.html"><code>guide_colormeter()</code></a>, which is a <a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a> color/fill legend <strong>guide extension</strong> in the style of a dashboard meter.</p>
 <div class="section level2">
-<h2 id="simple-usage">Simple usage<a class="anchor" aria-label="anchor" href="#simple-usage"></a>
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggcolormeter"</span><span class="op">)</span></span>
+<span><span class="co"># or</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"yjunechoe/ggcolormeter"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="simple-usage">Simple usage<a class="anchor" aria-label="anchor" href="#simple-usage"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/yjunechoe/ggcolormeter" class="external-link">ggcolormeter</a></span><span class="op">)</span></span>
 <span></span>
@@ -103,7 +114,7 @@
 </h2>
 <p>The colormeter legend is a bit pecular in that its size doesn’t expand with more keys: the colormeter has a fixed size and shape, and its elements are packed inside it.</p>
 <p>You can primarily control the size of the legend with <code>legend_size</code> and <code>aspect.ratio</code></p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -113,9 +124,9 @@
 <span>      aspect.ratio <span class="op">=</span> <span class="fl">.8</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
 <p>Note that the usual legend background is still present and different from the dashboard circle:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -126,9 +137,9 @@
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.background <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_rect</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"red"</span>, fill <span class="op">=</span> <span class="st">"pink"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
 <p>Most of the time you’d want to remove this legend background, as the dashboard serves that purpose:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -140,12 +151,12 @@
 <span>    legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.85</span>, <span class="fl">.75</span><span class="op">)</span>,</span>
 <span>    legend.background <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="id_2-arc">2) Arc<a class="anchor" aria-label="anchor" href="#id_2-arc"></a>
 </h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"arc"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt; $arc_range</span></span>
 <span><span class="co">#&gt; c(-4/7 * pi, 4/7 * pi)</span></span>
@@ -162,7 +173,7 @@
 <span><span class="co">#&gt; $arc_rounding</span></span>
 <span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
 <p>Non-positional aesthetic arguments for the color arc:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -175,7 +186,7 @@
 <span>  <span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-arc-theme-1.png" width="100%"></p>
 <p>By default, label and dashboard radii are derived from <code>arc_radius</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -186,7 +197,7 @@
 <span>  <span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-arc-radius-1.png" width="100%"></p>
 <p>You can use <code>arc_range</code> to set the start and end angles of the color meter, which may yield different shapes:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -195,9 +206,9 @@
 <span>      arc_range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">pi</span><span class="op">/</span><span class="fl">2</span>, <span class="fl">0</span><span class="op">)</span> <span class="co"># quarter circle</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-7-1.png" width="100%"></p>
 <p>The defaults aren’t great for when you change from the dashboard shape. Some manual adjustments may be desirable:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -208,12 +219,12 @@
 <span>      legend_padding <span class="op">=</span> <span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/unit.html" class="external-link">unit</a></span><span class="op">(</span><span class="fl">0.7</span>, <span class="st">"lines"</span><span class="op">)</span> <span class="co"># pads relative to legend label</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-7-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-8-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="id_3-label">3) Label<a class="anchor" aria-label="anchor" href="#id_3-label"></a>
 </h2>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"label"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt; $label.theme</span></span>
 <span><span class="co">#&gt; NULL</span></span>
@@ -221,7 +232,7 @@
 <span><span class="co">#&gt; $label_radius</span></span>
 <span><span class="co">#&gt; arc_radius * 1.25</span></span></code></pre></div>
 <p>By default, the dashboard radius is derived from <code>label_radius</code>:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -230,9 +241,9 @@
 <span>      label_radius <span class="op">=</span> <span class="fl">1.5</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-9-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-10-1.png" width="100%"></p>
 <p>Like <code><a href="https://ggplot2.tidyverse.org/reference/guide_coloursteps.html" class="external-link">ggplot2::guide_colorsteps()</a></code>, the argument <code>show.limits</code> controls labeling the limits of the scale:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -242,12 +253,12 @@
 <span>      show.limits <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-10-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-11-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="id_4-dashboard">4) Dashboard<a class="anchor" aria-label="anchor" href="#id_4-dashboard"></a>
 </h2>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"dashboard"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt; $dashboard_radius</span></span>
 <span><span class="co">#&gt; label_radius * 1.2</span></span>
@@ -270,7 +281,7 @@
 <span><span class="co">#&gt; $close_dashboard</span></span>
 <span><span class="co">#&gt; clip_dashboard</span></span></code></pre></div>
 <p><code>dashboard_radius</code> controls the radius of just the dashboard circle</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -279,9 +290,9 @@
 <span>      dashboard_radius <span class="op">=</span> <span class="fl">1.2</span>,</span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-12-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-13-1.png" width="100%"></p>
 <p>By default, the dashboard is clipped to the legend boundary, which can be turned off:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -292,10 +303,10 @@
 <span>      clip_dashboard <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.title <span class="op">=</span> <span class="fu">ggtext</span><span class="fu">::</span><span class="fu">element_markdown</span><span class="op">(</span>vjust <span class="op">=</span> <span class="op">-</span><span class="fl">.6</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-13-1.png" width="100%"></p>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.title <span class="op">=</span> <span class="fu">ggtext</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/ggtext/reference/element_markdown.html" class="external-link">element_markdown</a></span><span class="op">(</span>vjust <span class="op">=</span> <span class="op">-</span><span class="fl">.6</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-14-1.png" width="100%"></p>
 <p>Non-positional aesthetic arguments for the dashboard:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -307,12 +318,12 @@
 <span>      dashboard_linewidth <span class="op">=</span> <span class="fl">4</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-14-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-15-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="id_5-frame">5) Frame<a class="anchor" aria-label="anchor" href="#id_5-frame"></a>
 </h2>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"frame"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/formals.html" class="external-link">formals</a></span><span class="op">(</span><span class="va">guide_colormeter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt; $frame_color</span></span>
 <span><span class="co">#&gt; [1] NA</span></span>
@@ -323,7 +334,7 @@
 <span><span class="co">#&gt; $frame_linetype</span></span>
 <span><span class="co">#&gt; [1] 1</span></span></code></pre></div>
 <p>Frames simply decorate the color arcs/bars:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -333,22 +344,22 @@
 <span>      frame_linewidth <span class="op">=</span> <span class="fl">.3</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-16-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-17-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="miscellaneous">Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous"></a>
 </h2>
 <p>Set <code>debug = TRUE</code> to inspect the internal legend coordinate system (for deciding on <code>dashboard_radius</code>, <code>arc_width</code>, <code>title_position</code>, etc.):</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
 <span>    breaks <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/breaks_pretty.html" class="external-link">breaks_pretty</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
 <span>    guide <span class="op">=</span> <span class="fu"><a href="reference/guide_colormeter.html">guide_colormeter</a></span><span class="op">(</span>debug <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-17-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-18-1.png" width="100%"></p>
 <p>Puttings labels inside the arc:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_color_viridis_c</a></span><span class="op">(</span></span>
 <span>    option <span class="op">=</span> <span class="st">"inferno"</span>,</span>
@@ -361,7 +372,7 @@
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.85</span>, <span class="fl">.75</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-18-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-19-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>

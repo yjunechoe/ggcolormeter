@@ -6,7 +6,11 @@ Authors@R:
     person("June", "Choe", , "jchoe001@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-0701-921X"))
 Description: A 'ggplot2' guide extension for fill and color scales in the
-    style of a dashboard meter.
+    style of a dashboard meter. The dashboard legend maps onto continuous
+    aesthetics and can be customized for its dimensions and the style of its
+    various components including the labels and frames. Fine-grained control
+    over the positioning of dashboard components is possible via an option to
+    expose the legend-internal coordinate system.
 License: MIT + file LICENSE
 URL: https://github.com/yjunechoe/ggcolormeter, https://github.com/yjunechoe/ggcolormeter/issues, https://yjunechoe.github.io/ggcolormeter/
 BugReports: https://github.com/yjunechoe/ggcolormeter/issues

@@ -1,30 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/404.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/index.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/reference/guide_colormeter.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://yjunechoe.github.io/ggcolormeter/reference/legend-coords.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/404.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/LICENSE-text.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/LICENSE.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/authors.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/index.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/news/index.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/reference/guide_colormeter.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/reference/index.html</loc></url>
+<url><loc>https://yjunechoe.github.io/ggcolormeter/reference/legend-coords.html</loc></url>
 </urlset>
+

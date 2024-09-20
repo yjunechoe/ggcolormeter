@@ -1,9 +1,8 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-01-23T14:00Z
+last_built: 2024-09-20T00:39Z
 urls:
   reference: https://yjunechoe.github.io/ggcolormeter/reference
   article: https://yjunechoe.github.io/ggcolormeter/articles
-
